@@ -12,16 +12,29 @@ A collection of bash scripts. The idea is to keep track of the kind of commands 
 | [clean.sh](https://github.com/OctaveLauby/BashScripts/blob/master/clean.sh) | clean repository from the category you want |
 | [copy_rename.sh](https://github.com/OctaveLauby/BashScripts/blob/master/copy_rename.sh) | copy and rename files from directory |
 | [countlines.sh](https://github.com/OctaveLauby/BashScripts/blob/master/countlines.sh) | countlines in repository |
-| [logs.sh](https://github.com/OctaveLauby/BashScripts/blob/master/logs.sh)| colored logs functions |
+| [logs.sh](https://github.com/OctaveLauby/BashScripts/blob/master/logs.sh)| colored logs |
 
 
 # Use case
 
 ## Logs
 
+There is 5 levels of log (`<lvl>`):
+- debug
+- info
+- warning
+- error
+- fatal
+
+**Set log level**:  `$ set_<lvl>`
+
+**Log message**: `$ <lvl> msg`
+
+**Example**:
+
 ```
 $ source ./logs.sh
-
+$ set_debug
 $ debug "debug msg"
 $ info "info msg "
 $ warning "warning msg "
@@ -37,7 +50,7 @@ $ fatal "fatal msg "
 When replacing regex, `sed -e` is broken for:
 - non greedy match
 - some regex syntaxes (e.g. \d)
-- So one should use `perl -pe`.
+So one should use `perl -pe`.
 
 
 ## getopt
