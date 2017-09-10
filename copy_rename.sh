@@ -1,8 +1,8 @@
 #!/bin/sh
-#title           : 	move_rename.sh
-#description     : 	Move and rename files of a directory
-# 						files are YYYYMMDD-XXX_file.txt
-# 						and becomes YYYY-MM-DD_XXX.csv
+#title           :  move_rename.sh
+#description     :  Move and rename files of a directory
+#                       files are YYYYMMDD-XXX_file.txt
+#                       and becomes YYYY-MM-DD_XXX.csv
 #==============================================================================
 
 # do not forget / at the end
@@ -20,13 +20,13 @@ echo "# $CMD from ${DIR_OR} to ${DIR_DEST}"
 
 for FILE in ${DIR_OR}*
 do
-	echo "> Processing '${FILE}'"
-	FILE_NAME=$(basename ${FILE})
-	DEST_NAME=$(
-		echo ${FILE_NAME} |
-		perl -pe "s#${REGEX}#${REPLACE}#g"
-	)
-	DEST_PATH="${DIR_DEST}${DEST_NAME}"
-	echo "    - $CMD to ${DEST_PATH}"
-	$CMD ${FILE} ${DEST_PATH}
+    echo "> Processing '${FILE}'"
+    FILE_NAME=$(basename ${FILE})
+    DEST_NAME=$(
+        echo ${FILE_NAME} |
+        perl -pe "s#${REGEX}#${REPLACE}#g"
+    )
+    DEST_PATH="${DIR_DEST}${DEST_NAME}"
+    echo "    - $CMD to ${DEST_PATH}"
+    $CMD ${FILE} ${DEST_PATH}
 done

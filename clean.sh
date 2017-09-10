@@ -3,7 +3,6 @@
 #description     : This script clean a repository
 #==============================================================================
 
-
 CACHE=
 LOGS=
 TMP=
@@ -19,6 +18,7 @@ display_help() {
     echo
     exit 1
 }
+
 
 no_option() {
     echo "$0 is expecting at least one option."
