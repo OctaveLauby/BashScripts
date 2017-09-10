@@ -27,31 +27,34 @@ no_option() {
 
 
 HAS_OPT=
-while getopts haclt option
+for FLAG in "$@"
 do
-    case "${option}" in
-        a | all)
+    case $FLAG in
+        -a | --all)
             HAS_OPT="TRUE"
             CACHE="TRUE"
             LOGS="TRUE"
             TMP="TRUE"
             ;;
-        c | cache)
+        -c | --cache)
             HAS_OPT="TRUE"
             CACHE="TRUE"
             ;;
-        l | logs)
+        -l | --logs)
             HAS_OPT="TRUE"
             LOGS="TRUE"
             ;;
-        t | tmp)
+        -t | --tmp)
             HAS_OPT="TRUE"
             TMP="TRUE"
             ;;
-        h | \?)
+        -h | \?)
             HAS_OPT="TRUE"
             display_help
             ;;
+        *)
+            echo "Invalid Flag $FLAG"
+            display_help
     esac
 done
 [[ -z  ${HAS_OPT} ]] && no_option
@@ -59,4 +62,4 @@ done
 
 [[ ! -z ${CACHE} ]] && rm -rf .cache
 [[ ! -z ${TMP} ]] && rm -rf tmp/
-[[ ! -z ${LOGS} ]] && rm -rf _logs
+[[ ! -z ${LOGS} ]] && rm -rf logs/

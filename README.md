@@ -28,3 +28,18 @@ $ warning "warning msg "
 $ error "error msg "
 $ fatal "fatal msg "
 ```
+
+
+# Findings
+
+## Sed Regex
+
+When replacing regex, `sed -e` is broken for:
+- non greedy match
+- some regex syntaxes (e.g. \d)
+- So one should use `perl -pe`.
+
+
+## getopt
+
+Well, looks like one should [not use it](https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash).
