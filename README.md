@@ -53,7 +53,9 @@ There is 5 levels of log (`<lvl>`):
 
 ```
 $ source ./logs.sh
+
 $ set_debug
+
 $ debug "debug msg"
 $ info "info msg "
 $ warning "warning msg "
@@ -75,13 +77,13 @@ So one should use `perl -pe`.
 
 ## getopt
 
-Well, looks like one should [not use it](https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash).
+Well, looks like one [should not use getopt](https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash).
 
 
 ## " vs '
 
 ```
-MSG=hello
-echo '$MSG'
-echo "$MSG"
+$ MSG=hello
+$ echo '$MSG'
+$ echo "$MSG"
 ```
