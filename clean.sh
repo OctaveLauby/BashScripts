@@ -58,5 +58,5 @@ done
 
 
 [[ ! -z ${CACHE} ]] && rm -rf .cache
-[[ ! -z ${TMP} ]] && rm -rf _tmp
+[[ ! -z ${TMP} ]] && rm -rf tmp/
 [[ ! -z ${LOGS} ]] && rm -rf _logs
