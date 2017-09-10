@@ -67,10 +67,6 @@ So one should use `perl -pe`.
 
 Well, looks like one should [not use it](https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash).
 
-## Script vs Shell
-
-Some cmds might work in shell but not in script.
-
 
 ## " vs '
 
